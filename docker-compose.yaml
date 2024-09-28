@@ -8,13 +8,10 @@ services:
     container_name: frontend
     ports:
       - "4173:4173"
-    volumes:
-      - .:/app
-      - /app/node_modules
     environment:
       - VITE_API_URL=${VITE_API_URL}
     networks:
-      - app-network
+      - devops-php-helloworld_app-network
 networks:
-  app-network:
+  devops-php-helloworld_app-network:
     external: true
