@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: ${DOCKERFILE}
+    container_name: frontend
+    ports:
+      - "4173:4173"
+    environment:
+      - VITE_API_URL=${VITE_API_URL}
+    networks:
+      - devops-php-helloworld_app-network
+networks:
+  devops-php-helloworld_app-network:
+    external: true
